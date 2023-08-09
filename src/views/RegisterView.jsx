@@ -13,7 +13,7 @@ const styles = {
   },
 };
 
-export const RegisterView = () => {
+const RegisterView = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -75,3 +75,5 @@ export const RegisterView = () => {
     </div>
   );
 }
+
+export default RegisterView

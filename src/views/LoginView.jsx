@@ -13,7 +13,7 @@ const styles = {
   },
 };
 
-export const LoginView = () => {
+const LoginView = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -66,3 +66,5 @@ export const LoginView = () => {
     </div>
   );
 }
+
+export default LoginView

@@ -1,7 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { getUsername } from 'redux/auth/auth-selectors';
+import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/auth-operations';
-// import defaultAvatar from './default-avatar.png';
+import { useAuth } from 'hooks/useAuth';
 
 const styles = {
   container: {
@@ -19,13 +18,11 @@ const styles = {
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
-  const name = useSelector(getUsername);
-//   const avatar = defaultAvatar;
+  const {getUser} = useAuth()
 
   return (
     <div style={styles.container}>
-      {/* <img src={avatar} alt="" width="32" style={styles.avatar} /> */}
-      <span style={styles.name}>Ласкаво просимо, {name}</span>
+      <span style={styles.name}>Ласкаво просимо, {getUser}</span>
       <button type="button" onClick={() => dispatch(logOut())}>
         Вийти
       </button>

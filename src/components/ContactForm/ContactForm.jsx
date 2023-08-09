@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/contact-operations';
-import { getContacts } from 'redux/contacts/selectors';
-import { useSelector } from 'react-redux';
+import { useContacts } from 'hooks/useContacts';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const {contacts} = useContacts();
 
   const handleInputChange = e => {
     const { name, value } = e.target;

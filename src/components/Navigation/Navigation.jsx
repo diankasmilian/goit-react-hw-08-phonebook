@@ -1,15 +1,13 @@
-import React from "react";
+import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from 'hooks/useAuth';
 
 export const Navigation = () => {
-   return(
-      <nav>
-         <NavLink to='/'>
-            Головна
-         </NavLink>
-         <NavLink to='/contacts'>
-            Контакти
-         </NavLink>
-      </nav>
-   )
-}
+  const {isLoggedIn} = useAuth()
+  return (
+    <nav>
+      <NavLink to="/">Головна</NavLink>
+      {isLoggedIn && <NavLink to="/contacts">Контакти</NavLink>}
+    </nav>
+  );
+};

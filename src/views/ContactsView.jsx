@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/contact-operations';
 import { getError, getIsLoading, getContacts } from 'redux/contacts/selectors';
 
-export const ContactView = () => {
+const ContactView = () => {
   const dispatch = useDispatch();
 
   const isLoading = useSelector(getIsLoading);
@@ -29,3 +29,5 @@ export const ContactView = () => {
     </>
   );
 };
+
+export default ContactView
