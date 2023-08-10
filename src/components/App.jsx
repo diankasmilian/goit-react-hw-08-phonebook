@@ -3,7 +3,7 @@ import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
 import { PrivateRoute } from './PrivateRoute';
-import { Layout } from './Layout';
+import { Layout } from './Layout/Layout';
 import { RestrictedRoute } from './RegistedRoute';
 import { useAuth } from 'hooks/useAuth';
 
@@ -14,7 +14,7 @@ const RegisterView = lazy(() => import('../views/RegisterView'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const {isRefreshing} = useAuth();
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
