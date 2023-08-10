@@ -2,15 +2,16 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
-import { PrivateRoute } from './PrivateRoute';
-import { Layout } from './Layout/Layout';
-import { RestrictedRoute } from './RegistedRoute';
+import { PrivateRoute } from '../PrivateRoute';
+import { Layout } from '../Layout/Layout';
+import { RestrictedRoute } from '../RegistedRoute';
 import { useAuth } from 'hooks/useAuth';
+import { Container } from './App.styled';
 
-const HomeView = lazy(() => import('../views/HomeView'));
-const ContactView = lazy(() => import('../views/ContactsView'));
-const LoginView = lazy(() => import('../views/LoginView'));
-const RegisterView = lazy(() => import('../views/RegisterView'));
+const HomeView = lazy(() => import('../../views/HomeView'));
+const ContactView = lazy(() => import('../../views/ContactsView'));
+const LoginView = lazy(() => import('../../views/LoginView'));
+const RegisterView = lazy(() => import('../../views/RegisterView'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ export const App = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
-    <>
+    <Container>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomeView />} />
@@ -54,6 +55,6 @@ export const App = () => {
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
-    </>
+    </Container>
   );
 };

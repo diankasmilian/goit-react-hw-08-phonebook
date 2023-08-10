@@ -1,5 +1,5 @@
-import { styled } from "styled-components";
 import { NavLink } from 'react-router-dom';
+import { styled } from 'styled-components';
 
 export const Link = styled(NavLink)`
 text-decoration: none;
@@ -18,7 +18,7 @@ transition: background-color 1s;
 }
 `
 
-export const NavList = styled.nav`
+export const NavList = styled.div`
 display: flex;
 gap: 10px;
 `

@@ -1,17 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import { Container, Title, Form } from './AuthFormView.styled';
 
 const RegisterView = () => {
   const dispatch = useDispatch();
@@ -41,16 +31,16 @@ const RegisterView = () => {
   };
 
   return (
-    <div>
-      <h1>Реєстрація</h1>
+    <Container>
+      <Title>Реєстрація</Title>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <label>
           Ім'я
           <input type="text" name="name" value={name} onChange={handleChange} />
         </label>
 
-        <label style={styles.label}>
+        <label>
           Пошта
           <input
             type="email"
@@ -60,7 +50,7 @@ const RegisterView = () => {
           />
         </label>
 
-        <label style={styles.label}>
+        <label>
           Пароль
           <input
             type="password"
@@ -70,10 +60,10 @@ const RegisterView = () => {
           />
         </label>
 
-        <button type="submit">Зарегистрироваться</button>
-      </form>
-    </div>
+        <button type="submit">Зареєструватися</button>
+      </Form>
+    </Container>
   );
-}
+};
 
-export default RegisterView
+export default RegisterView;

@@ -2,11 +2,12 @@ import { styled } from 'styled-components';
 
 export const Header = styled.header`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    border-bottom: 2px solid #2A363B;
+    border-bottom: 2px solid #fff;
     padding: 10px 5px;
-    background-color: #744289;
+    background-color: transparent;
+    width: 100%;
 
 
 `;
