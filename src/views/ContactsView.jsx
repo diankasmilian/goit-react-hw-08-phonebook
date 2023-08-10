@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/contact-operations';
 import { getError, getIsLoading, getContacts } from 'redux/contacts/selectors';
+import { Loader } from 'components/Loader/Loader';
 
 const ContactView = () => {
   const dispatch = useDispatch();
@@ -19,12 +20,10 @@ const ContactView = () => {
 
   return (
     <>
-      <h2>Phonebook</h2>
       <ContactForm />
 
-      <h2>Contacts</h2>
       <Filter />
-      {isLoading && !error && <b>Request in progress...</b>}
+      {isLoading && !error && <Loader/>}
       {contacts.length > 0 && <ContactList />}
     </>
   );

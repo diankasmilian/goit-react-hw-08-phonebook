@@ -4,7 +4,7 @@ export const Container = styled.div`
 display: flex;
 align-items: center;
 gap: 12px;
-color: #fff;
+color: #5C5A5D;
 `
 
 export const Text = styled.span`

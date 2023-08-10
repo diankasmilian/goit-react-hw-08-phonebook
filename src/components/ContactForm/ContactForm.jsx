@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/contact-operations';
 import { useContacts } from 'hooks/useContacts';
+import { Form } from './ContactForm.styled';
+import { toast } from 'react-toastify';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -37,7 +39,7 @@ const ContactForm = () => {
     );
 
     sameName
-      ? alert(`${name} or ${number} is already in contacts`)
+      ? toast.error(`Користувач з таким ім'ям або номером вже існує`)
       : dispatch(addContact({name, number}));
 
     reset();
@@ -49,14 +51,15 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <label>
         <input
           onChange={handleInputChange}
           value={name}
           type="text"
-          placeholder="Name"
+          placeholder="Ім'я"
           name="name"
+          autoComplete='off'
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
@@ -67,15 +70,16 @@ const ContactForm = () => {
           value={number}
           type="tel"
           name="number"
-          placeholder="Number"
+          placeholder="Номер"
+          autoComplete='off'
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
       </label>
-      <button className="button-submit" type="submit">
-        App contact
+      <button type="submit">
+        Додати контакт
       </button>
-    </form>
+    </Form>
   );
 };
 

@@ -1,6 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/contact-operations';
 import { useContacts } from 'hooks/useContacts';
+import { List, Item, Text, Button } from './ContactList.styled';
+import { MdDelete } from "react-icons/md";
+
 
 const ContactList = () => {
   const {contacts} = useContacts();
@@ -18,17 +21,17 @@ const ContactList = () => {
 
 
   return (
-    <ul>
+    <List>
       {filterContacts.map(({ id, name, number }) => (
-        <li className="contact-item" key={id}>
-          <p>{name}</p>
-          <p>{number}</p>
-          <button className="button-remove" onClick={() => onRemoveContact(id)}>
-            &times;
-          </button>
-        </li>
+        <Item className="contact-item" key={id}>
+          <Text>Ім'я: {name}</Text>
+          <Text>Телефон: {number}</Text>
+          <Button className="button-remove" onClick={() => onRemoveContact(id)}>
+            <MdDelete size={25} color='#fff'/>
+          </Button>
+        </Item>
       ))}
-    </ul>
+    </List>
   );
 };
 

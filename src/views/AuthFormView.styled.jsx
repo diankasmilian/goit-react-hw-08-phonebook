@@ -29,6 +29,7 @@ font-size: 14px;
 }
 
 input {
+   font-family: var(--family);
    border: none;
    outline: none;
    border-bottom: 1px solid #5C5A5D;

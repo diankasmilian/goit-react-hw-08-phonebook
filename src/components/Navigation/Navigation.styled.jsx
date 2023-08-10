@@ -12,7 +12,6 @@ border-radius: 7px;
 transition: background-color 1s; 
 
 &:hover, &:focus, &.active {
-   color: #5C5A5D;
    background-color: #fff;
 
 }

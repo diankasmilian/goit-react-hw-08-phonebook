@@ -7,6 +7,9 @@ import { Layout } from '../Layout/Layout';
 import { RestrictedRoute } from '../RegistedRoute';
 import { useAuth } from 'hooks/useAuth';
 import { Container } from './App.styled';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Loader } from 'components/Loader/Loader';
 
 const HomeView = lazy(() => import('../../views/HomeView'));
 const ContactView = lazy(() => import('../../views/ContactsView'));
@@ -22,7 +25,7 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <Loader/>
   ) : (
     <Container>
       <Routes>
@@ -55,6 +58,7 @@ export const App = () => {
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
+      <ToastContainer/>
     </Container>
   );
 };

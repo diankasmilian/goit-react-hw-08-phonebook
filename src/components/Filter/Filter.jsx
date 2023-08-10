@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/contacts/filterSlice';
 import { useContacts } from 'hooks/useContacts';
+import { Container, Input } from './Filter.styled';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -13,14 +14,15 @@ const Filter = () => {
 
   const {filter} = useContacts();
   return (
-    <div>
-      <input
+    <Container>
+      <Input
         type="text"
         name="filter"
         value={filter}
+        placeholder='Пошук контакту'
         onChange={handleFilterChange}
       />
-    </div>
+    </Container>
   );
 };
 
