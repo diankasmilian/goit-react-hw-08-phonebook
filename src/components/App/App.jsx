@@ -25,7 +25,7 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <Loader/>
+    <Loader />
   ) : (
     <Container>
       <Routes>
@@ -58,7 +58,7 @@ export const App = () => {
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
-      <ToastContainer/>
+      <ToastContainer />
     </Container>
   );
 };

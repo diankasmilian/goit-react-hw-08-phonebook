@@ -3,7 +3,7 @@ import { useAuth } from 'hooks/useAuth';
 import { Link, NavList } from './Navigation.styled';
 
 export const Navigation = () => {
-  const {isLoggedIn} = useAuth()
+  const { isLoggedIn } = useAuth();
   return (
     <NavList>
       <Link to="/">Головна</Link>

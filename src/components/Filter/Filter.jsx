@@ -12,14 +12,14 @@ const Filter = () => {
     dispatch(setFilter(filterValue));
   };
 
-  const {filter} = useContacts();
+  const { filter } = useContacts();
   return (
     <Container>
       <Input
         type="text"
         name="filter"
         value={filter}
-        placeholder='Пошук контакту'
+        placeholder="Пошук контакту"
         onChange={handleFilterChange}
       />
     </Container>

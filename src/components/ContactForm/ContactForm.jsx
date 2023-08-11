@@ -10,7 +10,7 @@ const ContactForm = () => {
   const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
-  const {contacts} = useContacts();
+  const { contacts } = useContacts();
 
   const handleInputChange = e => {
     const { name, value } = e.target;
@@ -40,7 +40,7 @@ const ContactForm = () => {
 
     sameName
       ? toast.error(`Користувач з таким ім'ям або номером вже існує`)
-      : dispatch(addContact({name, number}));
+      : dispatch(addContact({ name, number }));
 
     reset();
   };
@@ -59,7 +59,7 @@ const ContactForm = () => {
           type="text"
           placeholder="Ім'я"
           name="name"
-          autoComplete='off'
+          autoComplete="off"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
@@ -71,14 +71,12 @@ const ContactForm = () => {
           type="tel"
           name="number"
           placeholder="Номер"
-          autoComplete='off'
+          autoComplete="off"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
       </label>
-      <button type="submit">
-        Додати контакт
-      </button>
+      <button type="submit">Додати контакт</button>
     </Form>
   );
 };

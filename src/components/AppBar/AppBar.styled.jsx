@@ -8,6 +8,4 @@ export const Header = styled.header`
     padding: 10px 5px;
     background-color: transparent;
     width: 100%;
-
-
 `;

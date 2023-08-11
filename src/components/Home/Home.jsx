@@ -1,9 +1,9 @@
-import { Title, Container } from "./Home.styled"
+import { Title, Container } from './Home.styled';
 
 export const Home = () => {
-   return (
-      <Container>
+  return (
+    <Container>
       <Title>Вітаємо в книзі контактів</Title>
-      </Container>
-   )
-}
+    </Container>
+  );
+};

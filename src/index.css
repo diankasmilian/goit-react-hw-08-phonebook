@@ -1,5 +1,5 @@
-@import-normalize; 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;800&family=Montserrat:wght@400;500;600;700&display=swap');
+@import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 body {
   margin: 0;
@@ -17,4 +17,6 @@ code {
 
 :root {
   --family: 'Montserrat', sans-serif;
+  --text-color: #5c5a5d;
+  --hover-button: #8846A4;
 }

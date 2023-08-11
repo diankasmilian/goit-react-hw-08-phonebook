@@ -23,10 +23,10 @@ const ContactView = () => {
       <ContactForm />
 
       <Filter />
-      {isLoading && !error && <Loader/>}
+      {isLoading && !error && <Loader />}
       {contacts.length > 0 && <ContactList />}
     </>
   );
 };
 
-export default ContactView
+export default ContactView;

@@ -4,16 +4,8 @@ import { Link, NavList } from 'components/Navigation/Navigation.styled';
 export const AuthNav = () => {
   return (
     <NavList>
-      <Link
-        to="/register"
-      >
-        Реєстрація
-      </Link>
-      <Link
-        to="/login"
-      >
-        Логін
-      </Link>
+      <Link to="/register">Реєстрація</Link>
+      <Link to="/login">Логін</Link>
     </NavList>
   );
-}
+};
